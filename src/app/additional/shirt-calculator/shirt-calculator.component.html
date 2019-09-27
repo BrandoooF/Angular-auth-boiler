@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row"> 
+
+    <div class="col-md-12 border border-light px-5">
+      <h4>{{total}}</h4>
+    </div>
+
+    <div class="col-md-12">
+      <h6>Adult</h6>
+      <div class="row">
+        <div class="col-md-1 border-right border-light" *ngFor="let size of adultSizes">
+          <label>{{size.size}}</label>
+          <input class="form-control" type="number" [(ngModel)]="size.price">
+          <input class="form-control" type="number" [(ngModel)]="size.quantity">
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row mt-5">      
+      <div class="col-md-12">
+        <h6>Youth</h6>
+        <div class="row">
+          <div class="col-md-1 border-right border-light" *ngFor="let size of youthSizes">
+            <label>{{size.size}}</label>
+            <input class="form-control" type="number" [(ngModel)]="size.price">
+            <input class="form-control" type="number" [(ngModel)]="size.quantity">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container-fluid bg-light pt-5" style="min-height: 100vh;">
+  <div class="col-md-4 offset-md-4">
+    <app-error-display *ngFor="let err of non_field_errors" [message]="err"></app-error-display>
+    <div class="card">   
+      <div class="card-body">
+        <form [formGroup]="loginForm" *ngIf="loginForm">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username">
+          </div>
+          
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+          <button class="btn btn-sm btn-primary" type="button" (click)="formSubmitted($event, loginForm.value)">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mt-1 clickable" *ngIf="storedUser" (click)="continueAsSavedUser()">
+      <div class="card-body p-1 px-2">
+        <p class="text-muted no-margin p-1" style="margin-bottom: 0;">Continue as <span class="text-primary">{{ storedUser?.username }}</span></p>
+      </div>
+    </div>
+   
+  </div>
+</div>

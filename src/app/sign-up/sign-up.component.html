@@ -1,0 +1,39 @@
+<div class="col-md-6 offset-md-3 mt-3">
+  <form [formGroup]="form" *ngIf="form">
+    <h5>Personal Information</h5>
+    <div class="form-group">
+      <label>First Name</label>
+      <input class="form-control" type="text" formControlName="first_name">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input class="form-control" type="text" formControlName="last_name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input class="form-control" type="text" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>Username</label>
+        <input class="form-control" type="text" formControlName="username">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input class="form-control" type="password" formControlName="password">
+    </div>
+    <h5 class="mt-2">Your Company/Organization</h5>
+    <div class="form-group">
+      <label>Company Name</label>
+      <input class="form-control" type="text" formControlName="group_name">
+    </div>
+    <div class="form-group">
+      <label>Company Contact Name</label>
+      <input class="form-control" type="text" formControlName="company_contact">
+    </div>
+    <div class="form-group">
+      <label>Company Contact Email</label>
+      <input class="form-control" type="text" formControlName="company_contact_email">
+    </div>
+    <button class="btn btn-sm btn-primary" (click)="submitForm(form.value)">Register</button>
+  </form>
+</div>

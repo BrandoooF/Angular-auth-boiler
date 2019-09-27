@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h5>Print Areas</h5>
+      <div class="form-group">
+        <label>Front</label>
+        <input class="form-control" type="number" min="0" max="1000" [(ngModel)]="colors.front" (change)="updateTotal('front')">
+        <small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.front}}</small>
+      </div>
+
+      <div class="form-group">
+        <label>Back</label>
+        <input class="form-control" type="number" min="0" max="1000" [(ngModel)]="colors.back" (change)="updateTotal('back')">
+        <small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.back}}</small>
+      </div>
+
+      <div class="form-group">
+        <label>Right Sleeve</label>
+        <input class="form-control" type="number" min="0" max="1000" [(ngModel)]="colors.right" (change)="updateTotal('right')">
+        <small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.right}}</small>
+      </div>
+
+      <div class="form-group">
+        <label>Left Sleeve</label>
+        <input class="form-control" type="number" min="0" max="1000" [(ngModel)]="colors.left" (change)="updateTotal('left')">
+        <small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.left}}</small>
+      </div>
+
+      <h5 class="mt-5">Shirts & Additional Fees</h5>
+      <div class="form-group">
+        <label>Shirts Price</label>
+        <input class="form-control" type="number" min="0" max="500000" [(ngModel)]="shirtsPrice">
+        <!--<small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.left}}</small>-->
+      </div>
+
+      <div class="form-group">
+        <label>Screen Fee</label>
+        <input class="form-control" type="number" min="0" max="500000" [(ngModel)]="screenFee">
+        <!--<small id="emailHelp" class="form-text text-muted">Subtotal ${{totals.left}}</small>-->
+      </div>
+
+    </div>
+
+    <div class="col-md-6 text-center">
+     <!-- <p>Total</p>
+      <h1 class="mt-5" style="font-size: 400%; font-weight: 200;">$ {{ total + shirtsPrice + screenFee }}</h1>-->
+
+      <div class="card">
+        <div class="card-body">
+          <p>Total</p>
+          <h1 class="my-5 pb-5 border-bottom border-light" style="font-size: 400%; font-weight: 200;">$ {{ total + shirtsPrice + screenFee }}</h1>
+          <div class="d-flex justify-content-between mt-5">
+            <p class="text-muted">Printing Fees</p>
+            <p>${{total}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Shirts Cost</p>
+            <p>${{shirtsPrice}}</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Screen Fee</p>
+            <p>${{screenFee}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
